@@ -29,6 +29,12 @@ import path from 'path';
 // Cloudinary To  Store Image And Vidoe
 import cloudinary from 'cloudinary';
 
+// Security
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
+
+
+
 // Connection to the Cloud For free
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -61,11 +67,13 @@ if (process.env.NODE_ENV === 'development') {
   app.use(cookieParser());
   app.use(express.json());
   //app.use(morgan('dev'));
+  app.use(helmet());
+  app.use(mongoSanitize());
 
   
 
 // Router reference
-app.use('/api/v1/jobs',authenticateUser ,jobRouter);
+app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);
 

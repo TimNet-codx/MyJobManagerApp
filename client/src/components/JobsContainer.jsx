@@ -16,7 +16,6 @@ const JobsContainer = () => {
         </Wrapper>
        );
     }
-    
     return(
         <Wrapper>
             <h5>

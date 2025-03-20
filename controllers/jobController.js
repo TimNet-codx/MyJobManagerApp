@@ -13,15 +13,18 @@ export const getAllJobs = async (req, res) => {
       const queryObject = {createdBy: req.user.userId,};
 
       if(search){
-        queryObject.$or =[
+        queryObject.$or = [
           {position: {$regex: search, $options: 'i'}},
           {company: {$regex: search, $options: 'i'}}
         ];
-      };
+      }
 
+      // Search by job status or All job status
       if(jobStatus && jobStatus !== 'all'){
         queryObject.jobStatus = jobStatus;
       }
+      
+  // Search by Job type or All job Type
       if(jobType && jobType !== 'all'){
         queryObject.jobType = jobType;
       }
@@ -44,9 +47,7 @@ export const getAllJobs = async (req, res) => {
         // total job
       const totalJobs  = await Job.countDocuments(queryObject);
        // Page Number
-      const numOfPages = Math.ceil(totalJobs / limit)
-
-
+      const numOfPages = Math.ceil(totalJobs / limit);
       res.status(StatusCodes.OK).json({totalJobs, numOfPages, currentPage: page, jobs});
 };
 

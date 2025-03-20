@@ -9,13 +9,14 @@ import customFetch from "../utils/customFetch";
 
 
 
-// ADD JOB Button Function 
-export const action = async ({request}) => {
+// ADD JOB Button Function and Adding ReactQuery to it laster
+export const action = (queryClient) => async ({request}) => {
    const formData = await request.formData();
    const data = Object.fromEntries(formData);
 
    try {
        await customFetch.post('/jobs', data);
+       queryClient.invalidateQueries(['jobs']); // is added to get the current data for the user
        toast.success("Job Added Successfully");
        return redirect('all-jobs');
    } catch (error) {

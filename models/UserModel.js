@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Returning Current User Without the password
-UserSchema.method.toJson= function () {
+UserSchema.methods.toJSON= function () {
     let obj = this.toObject();
     delete obj.password;
     return obj;
