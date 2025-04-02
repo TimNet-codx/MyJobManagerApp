@@ -43,10 +43,12 @@ const Profile = () => {
               </label>
               <input type='file' id='avatar' name='avatar' className='form-input' accept='image/*' encType='multipart/form-data'/>
             </div>
-            <FormRow type='text' name='name' defaultValue={name} />
+            <FormRow type='text'  labelText='First Name' name='name' defaultValue={name} />
             <FormRow type='text' labelText='last name' name='lastName' defaultValue={lastName}/>
             <FormRow type='email' name='email' defaultValue={email} />
             <FormRow type='text' name='location' defaultValue={location} />
+            {/* <FormRow type='text'  name='password' defaultValue={password} /> */}
+
             {/* <button className='btn btn-block form-btn' type='submit' disabled={isSubmitting}> {isSubmitting ? 'submitting...' : 'save changes'} </button> */}
             <SubmitBtn formBtn/>
           </div>

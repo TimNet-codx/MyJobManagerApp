@@ -1,24 +1,26 @@
 import React from "react";
-import NavLinks from './NavLinks';
-import Logo from '../components/Logo';
-import Wrapper from '../assets/wrappers/BigSidebar';
-import { useDashboardContext } from '../pages/DashboardLayout';
+import NavLinks from "./NavLinks";
+import Logo from "../components/Logo";
+import Wrapper from "../assets/wrappers/BigSidebar";
+import { useDashboardContext } from "../pages/DashboardLayout";
 
 const BigSidebar = () => {
-  const {showSidebar} = useDashboardContext();
+  const { showSidebar } = useDashboardContext();
 
   return (
     <Wrapper>
-        <div 
+      <div
         className={
-          showSidebar ? 'sidebar-container' : 'sidebar-container show-sidebar'}>
-          <div className='content'>
-            <header>
-              <Logo/>
-            </header>
-            <NavLinks isBigSidebar/>
-          </div>
-          </div>   
+          showSidebar ? "sidebar-container" : "sidebar-container show-sidebar"
+        }
+      >
+        <div className="content">
+          <header>
+            <Logo />
+          </header>
+          <NavLinks isBigSidebar />
+        </div>
+      </div>
     </Wrapper>
   );
 };

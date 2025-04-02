@@ -5,6 +5,12 @@ import cloudinary from 'cloudinary';
 //import { promises as fs} from 'fs';
 import { formatImage } from "../middleware/multerMiddleware.js";
 
+export const getAllUsers = async (req, res) => {
+   const users = await User.find({});
+   res.status(StatusCodes.OK).json({users});
+
+};
+
 export const getCurrentUser = async (req, res) => {
     const user = await User.findOne({_id: req.user.userId});
     const userWithoutPassword = user.toJSON();

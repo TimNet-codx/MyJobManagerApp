@@ -1,5 +1,5 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {HomeLayout, Landing, Register, Login, DashboardLayout, Error, AddJob, Stats, AllJobs, Profile, EditJob, Admin } from './pages';  
+import {HomeLayout, Landing, Register, Login, DashboardLayout, Error, AddJob, Stats, AllJobs, Profile, EditJob, Admin, UsersList } from './pages';  
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
 import {action as registerAction} from './pages/Register';
@@ -10,11 +10,12 @@ import {loader as allJobLoader } from './pages/AllJobs';
 import {loader as editJobLoader} from './pages/EditJob';
 import {action as editJobAction} from './pages/EditJob';
 import {action as deleteJobAction} from './pages/DeleteJob';
-import {loader as adminLoader} from './pages/Admin';
+// import {loader as adminLoader} from './pages/Admin';
+import {loader as adminLoader} from './components/AdminStatItem';
+import {loader as usersLoader} from './components/UserListTable';
 import {action as profileAction} from './pages/Profile';
 import {loader as statsLoader} from './pages/Stats';
 import ErrorElement from './components/ErrorElement';
-
 
 
 const checkDefaultTheme = () => {
@@ -22,6 +23,7 @@ const checkDefaultTheme = () => {
    document.body.classList.toggle('dark-theme', isDarkTheme);
    return isDarkTheme;
 }
+
 
 const isDarkThemeEnabled = checkDefaultTheme();
 
@@ -99,6 +101,11 @@ const router = createBrowserRouter([
             path: 'admin',
             element: <Admin/>,
             loader: adminLoader,
+          },
+          {
+            path: 'usersList',
+            element: <UsersList/>,
+            loader: usersLoader(queryClient),
           }
         ]
       }
@@ -114,7 +121,7 @@ const App = () => {
   return  (
     <QueryClientProvider client={queryClient}>  
       <RouterProvider router={router}/>
-      <ReactQueryDevtools initialIsOpen={false}/>
+      {/* <ReactQueryDevtools initialIsOpen={false}/> */}
     </QueryClientProvider>
   );
 };

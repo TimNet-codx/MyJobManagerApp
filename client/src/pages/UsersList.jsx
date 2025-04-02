@@ -5,7 +5,8 @@ import React from "react";
 // import customFetch from '../utils/customFetch';
 // import Wrapper from '../assets/wrappers/StatsContainer';
 // import { toast } from 'react-toastify';
-import { AdminStatItem } from "../components";
+import { UserListTable } from "../components";
+
 
 // export const loader = async () =>{
 //     try {
@@ -17,14 +18,13 @@ import { AdminStatItem } from "../components";
 //     }
 // };
 
-const Admin = () => {
-  //const {users, jobs} = useLoaderData();
-  return (
-    <>
-      <AdminStatItem />
-      {/* <UserListTable/> */}
-    </>
-  );
+const UsersList = () => {
+    //const {users, jobs} = useLoaderData();
+    return (
+      <>
+      <UserListTable/>
+      </> 
+    );
 };
 
-export default Admin;
+export default UsersList;

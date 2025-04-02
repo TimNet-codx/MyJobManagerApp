@@ -9,12 +9,26 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
   }
-  .page {
-    min-height: calc(100vh - var(--nav-height));
-    display: grid;
-    align-items: center;
-    margin-top: -3rem;
+
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page {
+  min-height: calc(100vh - var(--nav-height));
+  display: grid;
+  align-items: center;
+  margin-top: -3rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
   h1 {
     font-weight: 700;
     span {

@@ -11,8 +11,17 @@
 html {
   font-size: 100%;
 } /*16px*/
-.logo{
+.logo{ 
   height: 50px;
+}
+
+@media (max-width: 640px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+   /* display: none ! important; */
+  }
 }
 :root {
   /* colors */

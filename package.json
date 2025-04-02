@@ -16,6 +16,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.8",
+    "@mui/x-data-grid": "^7.28.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.37.3",
     "concurrently": "^8.0.1",

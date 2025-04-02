@@ -19,6 +19,8 @@
     "react-dom": "^18.3.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
+    "react-table": "^7.8.0",
+    "react-table-lite": "^3.0.3",
     "react-toastify": "^9.1.2",
     "recharts": "^2.5.0",
     "styled-components": "^5.3.10"

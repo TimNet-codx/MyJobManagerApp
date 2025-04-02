@@ -9,9 +9,22 @@ const Wrapper = styled.section`
     margin: 0 auto;
     margin-bottom: 1.38rem;
   }
+
+    @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   .form {
     max-width: 400px;
     border-top: 5px solid var(--red-300);
+     animation: fadeInUp 0.8s ease-out;
   }
   h4 {
     text-align: center;
