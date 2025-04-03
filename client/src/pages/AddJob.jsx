@@ -41,7 +41,6 @@ const AddJob = () => {
             type="text"
             labelText="job location"
             name="jobLocation"
-            defaultValue={user.location}
           />
           <FormRowSelect
             lableText="job status"
@@ -50,7 +49,7 @@ const AddJob = () => {
             list={Object.values(JOB_STATUS)}
           />
           <FormRowSelect
-            lableText="job "
+            lableText="job type"
             name="jobType"
             defaultValue={JOB_TYPE.FULL_TIME}
             list={Object.values(JOB_TYPE)}

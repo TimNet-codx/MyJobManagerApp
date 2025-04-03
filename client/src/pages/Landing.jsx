@@ -16,10 +16,9 @@ const Landing = () => {
         </nav>
         <div className="container page">
             <div className="info">
-              <h1> Job <span>Manager</span> app</h1> 
+              <h1> My Job <span>Manager</span> app</h1> 
               <p>
-              It allows users to create, assign, and monitor tasks efficiently, ensuring projects stay on schedule. Key features include real-time notifications, deadline reminders, progress tracking, and reporting capabilities.
-              The app enhances productivity by centralizing job-related data, reducing manual follow-ups, and improving workflow transparency. Ideal for businesses and teams of all sizes, Job Manager App simplifies work management for increased efficiency and accountability..
+              "The app allows users to add jobs with details such as position, company, job location, job status, and job type. Users can also edit and update the current job status or the job they have applied for while keeping a record of all jobs. By centralizing job-related data and reducing manual follow-ups, the app enhances productivity. Ideal for businesses and teams of all sizes, Job Manager simplifies work management, increasing efficiency and accountability."
               </p>
               <Link to="/register" className='btn register-link'>Register</Link>
               <Link to="/login" className='btn'>Login</Link>

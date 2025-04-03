@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     },
     location: {
         type: String,
-        default: 'kwara',
+        default: 'logos',
     },
     role: {
         type: String,
