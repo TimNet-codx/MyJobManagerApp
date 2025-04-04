@@ -97,15 +97,17 @@ export const editAndUpdateJob = async (req, res) => {
 
 // Delete Job
 export const deleteAndRemove = async (req, res) => {
-    const { id } = req.params;
-    const removedJob = await Job.findByIdAndRemove(id)
-    if (!removedJob) {
-      return res.status(404).json({ msg: `no job with id ${id}` });
-    }
+    // const { id } = req.params;
+    // const removedJob = await Job.findByIdAndRemove(id)
+    // if (!removedJob) {
+    //   return res.status(404).json({ msg: `no job with id ${id}` });
+    // }
+    const removedJob = await Job.findByIdAndDelete(req.params.id)
+    
     // const newJobs = jobs.filter((job) => job.id !== id);
     // jobs = newJobs;
   
-    res.status(StatusCodes.CREATED).json({ msg: 'job deleted', job: removedJob});
+    res.status(StatusCodes.OK).json({ msg: 'job deleted', job: removedJob});
 };
 
 export const showStats = async (req, res) => {

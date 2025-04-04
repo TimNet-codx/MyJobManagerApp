@@ -13,6 +13,7 @@ import {action as deleteJobAction} from './pages/DeleteJob';
 // import {loader as adminLoader} from './pages/Admin';
 import {loader as adminLoader} from './components/AdminStatItem';
 import {loader as usersLoader} from './components/UserListTable';
+//import {action as usersDeleteAction} from './components/UserListTable';
 import {action as profileAction} from './pages/Profile';
 import {loader as statsLoader} from './pages/Stats';
 import ErrorElement from './components/ErrorElement';
@@ -106,6 +107,7 @@ const router = createBrowserRouter([
             path: 'usersList',
             element: <UsersList/>,
             loader: usersLoader(queryClient),
+          //  action: usersDeleteAction(queryClient),
           }
         ]
       }

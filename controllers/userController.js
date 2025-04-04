@@ -47,3 +47,16 @@ export const updateUser =  async (req, res) => {
    res.status(StatusCodes.OK).json({msg: 'user updated'})
   //res.status(StatusCodes.OK).json({msg: 'update User'})
 };
+
+// Delete User and Remove
+export const deleteAndRemoveUsers = async (req, res) => {
+   //  const { id } = req.params;
+   //  const removedUser = await User.findByIdAndRemove(id)
+   //  if (!removedUser) {
+   //    return res.status(404).json({ msg: `no user with id ${id}` });
+   //  }
+    const removedUser = await User.findByIdAndDelete(req.params.id)
+    
+  
+    res.status(StatusCodes.OK).json({ msg: 'user deleted', removedUser});
+};
