@@ -5,7 +5,7 @@ import JobInfo from './JobInfo';
 import { Form } from 'react-router-dom'; 
 import day from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import { Button, Dialog, DialogDismiss, DialogHeading } from "@ariakit/react";
+import {Dialog, DialogDismiss, DialogHeading } from "@ariakit/react";
 import { useState } from "react";
 
 day.extend(advancedFormat);
