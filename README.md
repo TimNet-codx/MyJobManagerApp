@@ -6190,7 +6190,7 @@ app.get('*', (req, res) => {
 - change build command on render
 
 ```sh
-npm run setup-production-app
+  npm run setup-production-app
 ```
 
 - push up to github

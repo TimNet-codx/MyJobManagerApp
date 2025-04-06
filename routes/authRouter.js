@@ -6,12 +6,12 @@ import rateLimit from "express-rate-limit";
 
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 15,
+    max: 5,
     message: {msg: 'IP rate limit exceede, retry in 15 minutes.'}
 })
 
-router.post('/register', validateRegisterInput, register);
-router.post('/login', validateLoginInput, login);
+router.post('/register', apiLimiter, validateRegisterInput, register);
+router.post('/login', apiLimiter, validateLoginInput, login);
 router.get('/logout', logout);
 
 export default router;
