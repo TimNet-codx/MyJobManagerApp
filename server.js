@@ -48,9 +48,6 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-
-
-
 // app.get('/', (req, res) => {
 //     res.send('Hello World');
 //   });
@@ -62,6 +59,7 @@ if (process.env.NODE_ENV === 'development') {
  // For Developing
 //  app.use(express.static(path.resolve(__dirname, './public')));
  // Replace with this for production
+
  app.use(express.static(path.resolve(__dirname, './client/dist')));
 
   app.use(cookieParser());
@@ -82,6 +80,7 @@ app.use('/api/v1/users', authenticateUser, userRouter);
 //     res.sendFile(path.resolve(__dirname, './public/assets', 'index.html'));
 // });
 // Access Point Replace with this for production
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
