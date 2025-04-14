@@ -35,7 +35,7 @@ const LogoutContainer = () => {
         </div>
 
              {/* LogOut Dialog model  */}
-                <div className="">
+                <div>
                     <Dialog
                       open={open}
                       onClose={() => setOpen(false)}
